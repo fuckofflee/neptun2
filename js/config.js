@@ -139,7 +139,7 @@ export const CONFIG = {
     POSITION_X: -13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       '1vh',
+    SIZE:       5,
     CLICK_SCALE: 0.85,
   },
 
@@ -148,7 +148,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       '1vh',
+    SIZE:       6,
     CLICK_SCALE: 0.85,
   },
 
@@ -157,7 +157,7 @@ export const CONFIG = {
     POSITION_X: 12.25,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       '1vh',
+    SIZE:       3,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -168,7 +168,7 @@ export const CONFIG = {
     POSITION_X: 13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       '1vh',
+    SIZE:       3,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -179,7 +179,7 @@ export const CONFIG = {
     POSITION_X: 13,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       '1vh',
+    SIZE:       3,
   },
 
   // ═══════════════════════════════════════════════════════════
@@ -187,7 +187,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 4vw, 60px)',  // Much smaller max
+      FONT_SIZE:      'clamp(30px, 4vw, 75px)',  // Much smaller max
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -231,7 +231,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   CONTACT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 3.5vw, 60px)',  // Smaller max
+      FONT_SIZE:      'clamp(30px, 3.5vw, 75px)',  // Smaller max
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -266,17 +266,17 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(25px, 7vw, 48px)',  // Much smaller
+            FONT_SIZE:      'clamp(25px, 7vw, 75px)',  // Much smaller
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
-            LETTER_SPACING: '-2px',
+            LETTER_SPACING: '-3px',
             LINE_HEIGHT:    '0.8',
             DISPLAY_BLOCK:  true
           },
           {
             FONT_FAMILY:    'TitleFont2',
-            FONT_SIZE:      'clamp(25px, 2.8vw, 48px)',  // Much smaller
+            FONT_SIZE:      'clamp(25px, 2.8vw, 75px)',  // Much smaller
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -294,7 +294,7 @@ export const CONFIG = {
         FONT_WEIGHT:   'normal',
         FONT_STYLE:    'italic',
         COLOR:         '#000000',
-        LINE_HEIGHT:   '1',
+        LINE_HEIGHT:   '0.8',
         LETTER_SPACING:'0.3px',
         MARGIN_BOTTOM: '20px'
       },
@@ -366,7 +366,7 @@ export const CONFIG = {
       FONT_WEIGHT:    'normal',
       FONT_STYLE:     'normal',
       COLOR:          '#444444',
-      LINE_HEIGHT:    '1.3',
+      LINE_HEIGHT:    '1',
       LETTER_SPACING: '0.1px',
       TEXT_ALIGN:     'right',
       PADDING_RIGHT:  '8px',
