@@ -183,62 +183,64 @@ export const CONFIG = {
   },
 
   // ═══════════════════════════════════════════════════════════
-  // ABOUT SCENE LAYOUT
-  // Text on left with margin, image on right with margin
+  // ABOUT SCENE - Based on your reference image
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
-    // Text positioned on left side
     TEXT: {
-      FONT_SIZE:      'clamp(40px, 5.5vw, 85px)',  // Responsive font
+      FONT_SIZE:      'clamp(30px, 3.5vw, 60px)',  // Much smaller max
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
       TEXT_ALIGN:     'left',
-      LETTER_SPACING: '-5px',
-      LINE_HEIGHT:    '0.85',
-      MARGIN_TOP:     '60px',     // Top margin
-      MARGIN_LEFT:    '60px',     // Left margin
-      MARGIN_RIGHT:   '40px',
+      LETTER_SPACING: '-3px',
+      LINE_HEIGHT:    '0.9',
+      MARGIN_TOP:     '40px',
+      MARGIN_LEFT:    '40px',
+      MARGIN_RIGHT:   '20px',
     },
     
-    // Profile image on right side
-    PROFILE_IMAGE: {
-      PATH:        './img/profile.png',
-      WIDTH:       '400px',      // Fixed width (keeps dimensions)
-      HEIGHT:      'auto',
-      MARGIN_TOP:  '60px',       // Top margin
-      MARGIN_RIGHT:'60px',       // Right margin
-      POP_DELAY:   5500,
+    // Grid of 6 profile photos (3x2)
+    PROFILE_GRID: {
+      ENABLED:      true,
+      PATH:         './img/profile.png',
+      COLUMNS:      3,              // 3 photos wide
+      ROWS:         2,              // 2 photos tall
+      PHOTO_SIZE:   '120px',        // Each photo size
+      GAP:          '20px',         // Gap between photos
+      MARGIN_TOP:   '480px',        // Below text
+      MARGIN_LEFT:  '40px',
+      POP_DELAY:    5500,
     },
     
-    // CV image on right side
+    // CV sections on the right
     CV: {
       ENABLED:      true,
       PATH_EN:      './img/cvenglish.jpg',
       PATH_FR:      './img/cvfrancais.jpg',
-      WIDTH:        'auto',
-      HEIGHT:       'calc(100vh - 120px)',  // Full height minus margins
-      MARGIN_TOP:   '60px',
-      MARGIN_RIGHT: '60px',
+      FONT_SIZE:    'clamp(10px, 0.85vw, 14px)',
+      FONT_FAMILY:  'TextFont',
+      COLOR:        '#000000',
+      LINE_HEIGHT:  '1.4',
+      MARGIN_TOP:   '40px',
+      MARGIN_RIGHT: '40px',
       POP_DELAY:    5800,
     }
   },
 
   // ═══════════════════════════════════════════════════════════
-  // CONTACT SCENE LAYOUT
-  // Text on left with margin, no image
+  // CONTACT SCENE
   // ═══════════════════════════════════════════════════════════
   CONTACT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(40px, 5.5vw, 85px)',  // Responsive font
+      FONT_SIZE:      'clamp(30px, 3.5vw, 60px)',  // Smaller max
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
       TEXT_ALIGN:     'left',
-      LETTER_SPACING: '-5px',
-      LINE_HEIGHT:    '0.85',
-      MARGIN_TOP:     '60px',     // Top margin
-      MARGIN_LEFT:    '60px',     // Left margin
+      LETTER_SPACING: '-3px',
+      LINE_HEIGHT:    '0.9',
+      MARGIN_TOP:     '40px',
+      MARGIN_LEFT:    '40px',
       MARGIN_RIGHT:   '40px',
     }
   },
@@ -250,37 +252,35 @@ export const CONFIG = {
   },
 
   // ═══════════════════════════════════════════════════════════
-  // IMAGE CANVAS SCENE - TWO COLUMN FIXED LAYOUT
-  // Left: Text | Right: Images
+  // IMAGE CANVAS SCENE
   // ═══════════════════════════════════════════════════════════
   IMAGE_CANVAS: {
 
-    // Left column: Text content
     LEFT_PANEL: {
-      WIDTH:            '38%',           // Fixed width percentage
+      WIDTH:            '35%',          // Slightly narrower
       BACKGROUND_COLOR: '#ffffff',
-      PADDING_TOP:      '60px',          // Top margin
-      PADDING_LEFT:     '60px',          // Left margin
-      PADDING_RIGHT:    '40px',
-      PADDING_BOTTOM:   '60px',
+      PADDING_TOP:      '40px',
+      PADDING_LEFT:     '40px',
+      PADDING_RIGHT:    '30px',
+      PADDING_BOTTOM:   '40px',
 
       TITLE: {
         ENABLED: true,
-        MARGIN_BOTTOM: '32px',
+        MARGIN_BOTTOM: '20px',
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(40px, 4.5vw, 85px)',  // Scales from 40px to 85px
+            FONT_SIZE:      'clamp(25px, 2.8vw, 48px)',  // Much smaller
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
-            LETTER_SPACING: '-5px',
-            LINE_HEIGHT:    '0.85',
+            LETTER_SPACING: '-2px',
+            LINE_HEIGHT:    '0.9',
             DISPLAY_BLOCK:  true
           },
           {
             FONT_FAMILY:    'TitleFont2',
-            FONT_SIZE:      'clamp(40px, 4.5vw, 85px)',
+            FONT_SIZE:      'clamp(25px, 2.8vw, 48px)',  // Much smaller
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -294,24 +294,24 @@ export const CONFIG = {
       SUBTITLE: {
         ENABLED:       true,
         FONT_FAMILY:   'SubtitleFont',
-        FONT_SIZE:     'clamp(16px, 1.5vw, 24px)',  // Scales from 16px to 24px
+        FONT_SIZE:     'clamp(11px, 1.1vw, 16px)',  // Smaller
         FONT_WEIGHT:   'normal',
         FONT_STYLE:    'italic',
         COLOR:         '#000000',
-        LINE_HEIGHT:   '1.2',
-        LETTER_SPACING:'0.5px',
-        MARGIN_BOTTOM: '30px'
+        LINE_HEIGHT:   '1.3',
+        LETTER_SPACING:'0.3px',
+        MARGIN_BOTTOM: '20px'
       },
 
       METADATA: {
         ENABLED:       true,
         FONT_FAMILY:   'TextFont',
-        FONT_SIZE:     'clamp(11px, 0.9vw, 13px)',  // Scales from 11px to 13px
+        FONT_SIZE:     'clamp(9px, 0.75vw, 11px)',  // Smaller
         FONT_WEIGHT:   'normal',
         COLOR:         '#999999',
-        LINE_HEIGHT:   '1.4',
-        LETTER_SPACING:'0.3px',
-        MARGIN_BOTTOM: '6px',
+        LINE_HEIGHT:   '1.5',
+        LETTER_SPACING:'0.2px',
+        MARGIN_BOTTOM: '4px',
         ITEMS: {
           DATE:          { LABEL: 'Date',          ENABLED: true },
           CLIENT:        { LABEL: 'Client',        ENABLED: true },
@@ -321,32 +321,31 @@ export const CONFIG = {
       },
     },
 
-    // Right column: Images
     RIGHT_PANEL: {
-      WIDTH:                '62%',         // Fixed width percentage
+      WIDTH:                '65%',
       BACKGROUND_COLOR:     '#ffffff',
-      PADDING_TOP:          '60px',        // Top margin
-      PADDING_RIGHT:        '60px',        // Right margin
-      PADDING_LEFT:         '40px',
-      PADDING_BOTTOM:       '120px',
+      PADDING_TOP:          '40px',
+      PADDING_RIGHT:        '40px',
+      PADDING_LEFT:         '30px',
+      PADDING_BOTTOM:       '100px',
       SCROLL_PADDING_TOP:   '0px',
-      SCROLL_PADDING_BOTTOM:'120px',
+      SCROLL_PADDING_BOTTOM:'100px',
 
       MEDIA: {
-        HEIGHT: 'clamp(180px, 28vh, 400px)',  // Responsive image height
-        SPACING: 20,
+        HEIGHT: 'clamp(120px, 18vh, 220px)',  // MUCH smaller images
+        SPACING: 15,
 
         HOVER: {
           ENABLED:             true,
-          SCALE:               1.05,          // Subtle hover scale
-          TRANSITION_DURATION: '0.4s',
+          SCALE:               1.03,          // Subtle hover
+          TRANSITION_DURATION: '0.3s',
           CURSOR:              'pointer'
         },
 
         EXPAND: {
           ENABLED:             true,
-          SCALE:               1.6,            // Reduced to prevent overflow
-          TRANSITION_DURATION: '0.6s'
+          SCALE:               1.4,            // Smaller expand
+          TRANSITION_DURATION: '0.5s'
         }
       }
     },
@@ -370,15 +369,15 @@ export const CONFIG = {
     IMAGE_TEXT: {
       ENABLED:        true,
       FONT_FAMILY:    'TextFont',
-      FONT_SIZE:      'clamp(14px, 1.2vw, 18px)',  // Responsive
+      FONT_SIZE:      'clamp(10px, 0.9vw, 13px)',  // Smaller
       FONT_WEIGHT:    'normal',
       FONT_STYLE:     'normal',
       COLOR:          '#444444',
       LINE_HEIGHT:    '1.3',
-      LETTER_SPACING: '0.2px',
+      LETTER_SPACING: '0.1px',
       TEXT_ALIGN:     'right',
-      PADDING_RIGHT:  '12px',
-      MARGIN_TOP:     '14px',
+      PADDING_RIGHT:  '8px',
+      MARGIN_TOP:     '8px',
       TYPEWRITER: {
         SPEED:       22,
         CURSOR:      true,
