@@ -3,10 +3,7 @@ import { CONFIG } from './config.js';
 import { getCurrentLanguage } from './languageState.js';
 
 async function loadFonts() {
-  if (document.getElementById('about-fonts')) {
-    await document.fonts.ready;
-    return;
-  }
+  if (document.getElementById('about-fonts')) return;
   const style = document.createElement('style');
   style.id = 'about-fonts';
   let css = '';
@@ -48,6 +45,7 @@ export async function launchAboutScene(renderer, onCloseCallback) {
     document.body.appendChild(container);
   }
 
+  // TWO-COLUMN LAYOUT: Text left, images right
   Object.assign(container.style, {
     position: 'fixed',
     top: '0',
@@ -57,77 +55,34 @@ export async function launchAboutScene(renderer, onCloseCallback) {
     zIndex: '100',
     backgroundColor: '#ffffff',
     display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'left',
-    justifyContent: 'left',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    overflow: 'hidden',
   });
 
-  const btnCfg = CONFIG.IMAGE_CANVAS.CLOSE_BUTTON;
-  const isCentered = btnCfg.POSITION === 'bottom-center';
-  
-  const closeBtn = document.createElement('img');
-  closeBtn.src = btnCfg.IMAGE_PATH;
-  
-  const btnPos = {};
-  switch (btnCfg.POSITION) {
-    case 'bottom-center':
-      btnPos.bottom = btnCfg.OFFSET_Y; btnPos.left = '50%'; break;
-    case 'bottom-left':
-      btnPos.bottom = btnCfg.OFFSET_Y; btnPos.left = btnCfg.OFFSET_X; break;
-    case 'bottom-right':
-      btnPos.bottom = btnCfg.OFFSET_Y; btnPos.right = btnCfg.OFFSET_X; break;
-    case 'top-left':
-      btnPos.top = btnCfg.OFFSET_Y; btnPos.left = btnCfg.OFFSET_X; break;
-    default:
-      btnPos.top = btnCfg.OFFSET_Y; btnPos.right = btnCfg.OFFSET_X;
-  }
-  
-  Object.assign(closeBtn.style, {
-    position:   'fixed',
-    width:      btnCfg.WIDTH_IDLE,
-    height:     btnCfg.HEIGHT_IDLE,
-    opacity:    btnCfg.OPACITY_IDLE,
-    cursor:     'pointer',
-    zIndex:     btnCfg.Z_INDEX,
-    userSelect: 'none',
-    transition: `width ${btnCfg.TRANSITION}, height ${btnCfg.TRANSITION}, opacity ${btnCfg.TRANSITION}, transform ${btnCfg.TRANSITION}`,
-    transform:  isCentered ? 'translateX(-50%) scale(1)' : 'scale(1)',
-    ...btnPos,
-  });
-  
-  closeBtn.addEventListener('mouseenter', () => {
-    closeBtn.style.width   = btnCfg.WIDTH_HOVER;
-    closeBtn.style.height  = btnCfg.HEIGHT_HOVER;
-    closeBtn.style.opacity = btnCfg.OPACITY_HOVER;
-  });
-  closeBtn.addEventListener('mouseleave', () => {
-    closeBtn.style.width   = btnCfg.WIDTH_IDLE;
-    closeBtn.style.height  = btnCfg.HEIGHT_IDLE;
-    closeBtn.style.opacity = btnCfg.OPACITY_IDLE;
-  });
-  
-  closeBtn.addEventListener('mousedown', () => {
-    closeBtn.style.transform = isCentered ? `translateX(-50%) scale(${btnCfg.POP_SCALE})` : `scale(${btnCfg.POP_SCALE})`;
-  });
-  closeBtn.addEventListener('mouseup', () => {
-    closeBtn.style.transform = isCentered ? 'translateX(-50%) scale(1)' : 'scale(1)';
+  // LEFT: Text
+  const textContainer = document.createElement('div');
+  Object.assign(textContainer.style, {
+    flex: '0 0 auto',
+    marginTop: CONFIG.ABOUT_SCENE.TEXT.MARGIN_TOP,
+    marginLeft: CONFIG.ABOUT_SCENE.TEXT.MARGIN_LEFT,
+    marginRight: CONFIG.ABOUT_SCENE.TEXT.MARGIN_RIGHT,
+    maxWidth: '50%',
   });
   
   const title = document.createElement('div');
   Object.assign(title.style, {
-    fontSize: ABOUT.fontSize,
-    fontFamily: ABOUT.fontFamily,
-    fontWeight: ABOUT.fontWeight,
-    color: ABOUT.color,
-    textAlign: ABOUT.textAlign,
-    letterSpacing: ABOUT.letterSpacing,
-    lineHeight: ABOUT.lineHeight,
-    marginTop: ABOUT.marginTop,
-    marginBottom: ABOUT.marginBottom,
-    marginLeft: ABOUT.marginLeft,
-    marginRight: ABOUT.marginRight,
+    fontSize: CONFIG.ABOUT_SCENE.TEXT.FONT_SIZE,
+    fontFamily: CONFIG.ABOUT_SCENE.TEXT.FONT_FAMILY,
+    fontWeight: CONFIG.ABOUT_SCENE.TEXT.FONT_WEIGHT,
+    color: CONFIG.ABOUT_SCENE.TEXT.COLOR,
+    textAlign: CONFIG.ABOUT_SCENE.TEXT.TEXT_ALIGN,
+    letterSpacing: CONFIG.ABOUT_SCENE.TEXT.LETTER_SPACING,
+    lineHeight: CONFIG.ABOUT_SCENE.TEXT.LINE_HEIGHT,
   });
-  container.appendChild(title);
+  textContainer.appendChild(title);
+  container.appendChild(textContainer);
   
   const lang = getCurrentLanguage();
   const titleText = ABOUT[lang]?.title || ABOUT.en.title;
@@ -136,125 +91,106 @@ export async function launchAboutScene(renderer, onCloseCallback) {
     typewriteInto(title, titleText, 50);
   }, 200);
 
-  // Add image with pop-in animation (if configured)
-  const imgCfg = CONFIG.ABOUT_IMAGE;
-  if (imgCfg && imgCfg.PATH) {
-    const img = document.createElement('img');
-    img.src = imgCfg.PATH;
-    Object.assign(img.style, {
-      position: 'absolute',
-      left: imgCfg.POSITION_X,
-      top: imgCfg.POSITION_Y,
-      transform: `${imgCfg.TRANSFORM} scale(0.65)`,
-      width: imgCfg.WIDTH,
-      height: imgCfg.HEIGHT,
-      marginTop: imgCfg.MARGIN_TOP,
-      opacity: '0',
-      transition: 'none',
-    });
-    container.appendChild(img);
-    
-    // Pop-in animation using POP_DELAY from config
-    const popSpeed = CONFIG.CANVAS_MEDIA_POP_SPEED || 0.12;
-    const delay = imgCfg.POP_DELAY || 0;
-    
-    setTimeout(() => {
-      function popIn() {
-        const currentScale = parseFloat(img.style.transform.match(/scale\(([\d.]+)\)/)?.[1] || 0.65);
-        const currentOpacity = parseFloat(img.style.opacity);
-        const nextScale = Math.min(1, currentScale + popSpeed);
-        const nextOpacity = Math.min(1, currentOpacity + popSpeed);
-        img.style.transform = `${imgCfg.TRANSFORM} scale(${nextScale})`;
-        img.style.opacity = nextOpacity.toString();
-        if (nextScale < 0.99 || nextOpacity < 0.99) {
-          requestAnimationFrame(popIn);
-        }
-      }
-      requestAnimationFrame(popIn);
-    }, delay);
-  }
+  // RIGHT: Images
+  const imagesContainer = document.createElement('div');
+  Object.assign(imagesContainer.style, {
+    flex: '0 0 auto',
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: '40px',
+    marginTop: CONFIG.ABOUT_SCENE.PROFILE_IMAGE.MARGIN_TOP,
+    marginRight: CONFIG.ABOUT_SCENE.PROFILE_IMAGE.MARGIN_RIGHT,
+  });
 
-  // Add CV as JPG image (if configured and enabled)
-  const cvCfg = CONFIG.ABOUT_CV;
+  // Profile image
+  const profileImg = document.createElement('img');
+  profileImg.src = CONFIG.ABOUT_SCENE.PROFILE_IMAGE.PATH;
+  Object.assign(profileImg.style, {
+    width: CONFIG.ABOUT_SCENE.PROFILE_IMAGE.WIDTH,
+    height: CONFIG.ABOUT_SCENE.PROFILE_IMAGE.HEIGHT,
+    transform: 'scale(0.65)',
+    opacity: '0',
+  });
+  imagesContainer.appendChild(profileImg);
+  
+  setTimeout(() => {
+    function popIn() {
+      const scale = parseFloat(profileImg.style.transform.match(/scale\(([\d.]+)\)/)?.[1] || 0.65);
+      const opacity = parseFloat(profileImg.style.opacity);
+      const nextScale = Math.min(1, scale + 0.12);
+      const nextOpacity = Math.min(1, opacity + 0.12);
+      profileImg.style.transform = `scale(${nextScale})`;
+      profileImg.style.opacity = nextOpacity.toString();
+      if (nextScale < 0.99) requestAnimationFrame(popIn);
+    }
+    requestAnimationFrame(popIn);
+  }, CONFIG.ABOUT_SCENE.PROFILE_IMAGE.POP_DELAY);
+
+  // CV
+  const cvCfg = CONFIG.ABOUT_SCENE.CV;
   if (cvCfg && cvCfg.ENABLED) {
-    const lang = getCurrentLanguage();
     const cvPath = lang === 'fr' ? cvCfg.PATH_FR : cvCfg.PATH_EN;
-    
     const cvImg = document.createElement('img');
     cvImg.src = cvPath;
     Object.assign(cvImg.style, {
-      position: 'absolute',
-      left: cvCfg.POSITION_X,
-      top: cvCfg.POSITION_Y,
-      transform: `${cvCfg.TRANSFORM} scale(0.95)`,
       width: cvCfg.WIDTH,
       height: cvCfg.HEIGHT,
+      transform: 'scale(0.95)',
       opacity: '0',
-      transition: 'none',
     });
-    container.appendChild(cvImg);
-    
-    // Pop-in animation using POP_DELAY from config
-    const cvPopSpeed = CONFIG.CANVAS_MEDIA_POP_SPEED || 0.12;
-    const cvDelay = cvCfg.POP_DELAY || 0;
+    imagesContainer.appendChild(cvImg);
     
     setTimeout(() => {
       function cvPopIn() {
-        const currentScale = parseFloat(cvImg.style.transform.match(/scale\(([\d.]+)\)/)?.[1] || 0.65);
-        const currentOpacity = parseFloat(cvImg.style.opacity);
-        const nextScale = Math.min(1, currentScale + cvPopSpeed);
-        const nextOpacity = Math.min(1, currentOpacity + cvPopSpeed);
-        cvImg.style.transform = `${cvCfg.TRANSFORM} scale(${nextScale})`;
+        const scale = parseFloat(cvImg.style.transform.match(/scale\(([\d.]+)\)/)?.[1] || 0.95);
+        const opacity = parseFloat(cvImg.style.opacity);
+        const nextScale = Math.min(1, scale + 0.12);
+        const nextOpacity = Math.min(1, opacity + 0.12);
+        cvImg.style.transform = `scale(${nextScale})`;
         cvImg.style.opacity = nextOpacity.toString();
-        if (nextScale < 0.99 || nextOpacity < 0.99) {
-          requestAnimationFrame(cvPopIn);
-        }
+        if (nextScale < 0.99) requestAnimationFrame(cvPopIn);
       }
       requestAnimationFrame(cvPopIn);
-    }, cvDelay);
+    }, cvCfg.POP_DELAY);
   }
 
+  container.appendChild(imagesContainer);
+
+  // Close button
+  const btnCfg = CONFIG.IMAGE_CANVAS.CLOSE_BUTTON;
+  const closeBtn = document.createElement('img');
+  closeBtn.src = btnCfg.IMAGE_PATH;
+  
+  Object.assign(closeBtn.style, {
+    position: 'fixed',
+    bottom: btnCfg.OFFSET_Y,
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: btnCfg.WIDTH_IDLE,
+    height: btnCfg.HEIGHT_IDLE,
+    opacity: btnCfg.OPACITY_IDLE,
+    cursor: 'pointer',
+    zIndex: btnCfg.Z_INDEX,
+    transition: `all ${btnCfg.TRANSITION}`,
+  });
+  
+  closeBtn.addEventListener('mouseenter', () => {
+    closeBtn.style.width = btnCfg.WIDTH_HOVER;
+    closeBtn.style.height = btnCfg.HEIGHT_HOVER;
+    closeBtn.style.opacity = btnCfg.OPACITY_HOVER;
+  });
+  closeBtn.addEventListener('mouseleave', () => {
+    closeBtn.style.width = btnCfg.WIDTH_IDLE;
+    closeBtn.style.height = btnCfg.HEIGHT_IDLE;
+    closeBtn.style.opacity = btnCfg.OPACITY_IDLE;
+  });
+  
   closeBtn.addEventListener('click', () => {
-    // Fade out like canvas scene - include profile image and CV
-    const allItems = [title, closeBtn];
-    if (imgCfg && imgCfg.PATH) {
-      const img = container.querySelector('img[src*="profile"]');
-      if (img) allItems.push(img);
-    }
-    if (cvCfg && cvCfg.ENABLED) {
-      const cvImg = container.querySelector('img[src*="cv"]');
-      if (cvImg) allItems.push(cvImg);
-    }
-    const minDelay = CONFIG.CANVAS_EXIT_FADE_DELAY_MIN ?? 50;
-    const maxDelay = CONFIG.CANVAS_EXIT_FADE_DELAY_MAX ?? 500;
-    const speed    = CONFIG.CANVAS_EXIT_FADE_SPEED     ?? 0.008;
-    
-    let completed = 0;
-    const onComplete = () => {
-      completed++;
-      if (completed >= allItems.length) {
-        container.style.display = 'none';
-        renderer.domElement.style.display = 'block';
-        renderer.domElement.style.visibility = 'visible';
-        if (onCloseCallback) onCloseCallback();
-      }
-    };
-    
-    allItems.forEach(item => {
-      const delay = minDelay + Math.random() * (maxDelay - minDelay);
-      setTimeout(() => {
-        item.style.transition = 'none';
-        const startOp = parseFloat(getComputedStyle(item).opacity) || 1;
-        function fade() {
-          const current = parseFloat(item.style.opacity || startOp);
-          const next = Math.max(0, current - speed);
-          item.style.opacity = next.toString();
-          if (next > 0.01) requestAnimationFrame(fade);
-          else onComplete();
-        }
-        requestAnimationFrame(fade);
-      }, delay);
-    });
+    container.style.display = 'none';
+    renderer.domElement.style.display = 'block';
+    renderer.domElement.style.visibility = 'visible';
+    if (onCloseCallback) onCloseCallback();
   });
   container.appendChild(closeBtn);
 
