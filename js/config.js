@@ -179,13 +179,13 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 4vw, 50px)',  // Adaptive font
+      FONT_SIZE:      'clamp(30px, 4vw, 52px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
       TEXT_ALIGN:     'left',
       LETTER_SPACING: '-3px',
-      LINE_HEIGHT:    '0.8',
+      LINE_HEIGHT:    '0.85',
       MARGIN_TOP:     '35px',
       MARGIN_LEFT:    '35px',
     },
@@ -217,16 +217,16 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   CONTACT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 4vw, 50px)',  // Adaptive font
+      FONT_SIZE:      'clamp(30px, 4vw, 52px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
       TEXT_ALIGN:     'left',
       LETTER_SPACING: '-3px',
-      LINE_HEIGHT:    '0.9',
-      MARGIN_TOP:     '40px',
-      MARGIN_LEFT:    '40px',
-      MARGIN_RIGHT:   '40px',
+      LINE_HEIGHT:    '0.85',
+      MARGIN_TOP:     '35px',
+      MARGIN_LEFT:    '35px',
+      MARGIN_RIGHT:   '35px',
     }
   },
 
@@ -241,9 +241,9 @@ export const CONFIG = {
   IMAGE_CANVAS: {
 
     LEFT_PANEL: {
-      WIDTH:            '38%',
+      WIDTH:            '40%',
       BACKGROUND_COLOR: '#ffffff',
-      PADDING:          '60px',
+      PADDING:          '35px',
 
       TITLE: {
         ENABLED: true,
@@ -251,11 +251,11 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(30px, 4vw, 50px)',  // Adaptive
+            FONT_SIZE:      'clamp(30px, 4vw, 52px)',  // Adaptive
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
-            LETTER_SPACING: '-5px',
+            LETTER_SPACING: '-3px',
             LINE_HEIGHT:   '0.85',
             DISPLAY_BLOCK:  true
           },
@@ -265,7 +265,7 @@ export const CONFIG = {
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
-            LETTER_SPACING: '0px',
+            LETTER_SPACING: '-3px',
             TEXT_TRANSFORM: 'none',
             DISPLAY_BLOCK:  false
           }
@@ -305,7 +305,7 @@ export const CONFIG = {
     RIGHT_PANEL: {
       WIDTH:                '60%',
       BACKGROUND_COLOR:     '#ffffff',
-      PADDING:              '60px',
+      PADDING:              '35px',
       SCROLL_PADDING_TOP:   '0px',
       SCROLL_PADDING_BOTTOM:'120px',
 
@@ -347,7 +347,7 @@ export const CONFIG = {
     IMAGE_TEXT: {
       ENABLED:        true,
       FONT_FAMILY:    'TextFont',
-      FONT_SIZE:      'clamp(14px, 1.2vw, 18px)',  // Adaptive
+      FONT_SIZE:      'clamp(14px, 0.8vw, 12px)',  // Adaptive
       FONT_WEIGHT:    'normal',
       FONT_STYLE:     'normal',
       COLOR:          '#444444',
