@@ -326,8 +326,8 @@ export const CONFIG = {
       SCROLL_PADDING_BOTTOM:'100px',
 
       MEDIA: {
-        HEIGHT: '200px',  // MUCH smaller images
-        SPACING: 15,
+        HEIGHT: 200,  // MUCH smaller images
+        SPACING: 20,
 
         HOVER: {
           ENABLED:             true,
