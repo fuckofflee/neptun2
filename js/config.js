@@ -139,7 +139,7 @@ export const CONFIG = {
     POSITION_X: -13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       4,
     CLICK_SCALE: 0.85,
   },
 
@@ -148,7 +148,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       4,
     CLICK_SCALE: 0.85,
   },
 
@@ -157,7 +157,7 @@ export const CONFIG = {
     POSITION_X: 12.25,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       4,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -168,7 +168,7 @@ export const CONFIG = {
     POSITION_X: 13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       4,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -179,7 +179,7 @@ export const CONFIG = {
     POSITION_X: 13,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       4,
   },
 
   // ═══════════════════════════════════════════════════════════
@@ -257,7 +257,7 @@ export const CONFIG = {
   IMAGE_CANVAS: {
 
     LEFT_PANEL: {
-      WIDTH:            '35%',          // Slightly narrower
+      WIDTH:            '40%',          // Slightly narrower
       BACKGROUND_COLOR: '#ffffff',
       PADDING_TOP:      '40px',
       PADDING_LEFT:     '40px',
@@ -270,7 +270,7 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(25px, 2.8vw, 48px)',  // Much smaller
+            FONT_SIZE:      'clamp(25px, 3.5vw, 48px)',  // Much smaller
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -322,7 +322,7 @@ export const CONFIG = {
     },
 
     RIGHT_PANEL: {
-      WIDTH:                '65%',
+      WIDTH:                '60%',
       BACKGROUND_COLOR:     '#ffffff',
       PADDING_TOP:          '40px',
       PADDING_RIGHT:        '40px',
@@ -332,7 +332,7 @@ export const CONFIG = {
       SCROLL_PADDING_BOTTOM:'100px',
 
       MEDIA: {
-        HEIGHT: 'clamp(120px, 18vh, 220px)',  // MUCH smaller images
+        HEIGHT: 'clamp(120px, 2vh, 220px)',  // MUCH smaller images
         SPACING: 15,
 
         HOVER: {
