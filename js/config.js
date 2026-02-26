@@ -139,7 +139,7 @@ export const CONFIG = {
     POSITION_X: -13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       4,
+    SIZE:       '1vh',
     CLICK_SCALE: 0.85,
   },
 
@@ -148,7 +148,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       4,
+    SIZE:       '1vh',
     CLICK_SCALE: 0.85,
   },
 
@@ -157,7 +157,7 @@ export const CONFIG = {
     POSITION_X: 12.25,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       4,
+    SIZE:       '1vh',
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -168,7 +168,7 @@ export const CONFIG = {
     POSITION_X: 13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       4,
+    SIZE:       '1vh',
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -179,7 +179,7 @@ export const CONFIG = {
     POSITION_X: 13,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       4,
+    SIZE:       '1vh',
   },
 
   // ═══════════════════════════════════════════════════════════
@@ -187,16 +187,15 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 3.5vw, 60px)',  // Much smaller max
+      FONT_SIZE:      'clamp(30px, 4vw, 60px)',  // Much smaller max
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
       TEXT_ALIGN:     'left',
       LETTER_SPACING: '-3px',
-      LINE_HEIGHT:    '0.9',
-      MARGIN_TOP:     '40px',
-      MARGIN_LEFT:    '40px',
-      MARGIN_RIGHT:   '20px',
+      LINE_HEIGHT:    '0.8',
+      MARGIN_TOP:     '35px',
+      MARGIN_LEFT:    '35px',
     },
     
     // Grid of 6 profile photos (3x2)
@@ -267,12 +266,12 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(25px, 6vw, 48px)',  // Much smaller
+            FONT_SIZE:      'clamp(25px, 7vw, 48px)',  // Much smaller
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
             LETTER_SPACING: '-2px',
-            LINE_HEIGHT:    '0.9',
+            LINE_HEIGHT:    '0.8',
             DISPLAY_BLOCK:  true
           },
           {
@@ -291,11 +290,11 @@ export const CONFIG = {
       SUBTITLE: {
         ENABLED:       true,
         FONT_FAMILY:   'SubtitleFont',
-        FONT_SIZE:     'clamp(11px, 1.1vw, 16px)',  // Smaller
+        FONT_SIZE:     'clamp(11px, 1.2vw, 16px)',  // Smaller
         FONT_WEIGHT:   'normal',
         FONT_STYLE:    'italic',
         COLOR:         '#000000',
-        LINE_HEIGHT:   '1.3',
+        LINE_HEIGHT:   '1',
         LETTER_SPACING:'0.3px',
         MARGIN_BOTTOM: '20px'
       },
@@ -327,19 +326,19 @@ export const CONFIG = {
 
       MEDIA: {
         HEIGHT: 200,  // MUCH smaller images
-        SPACING: 20,
+        SPACING: 15,
 
         HOVER: {
           ENABLED:             true,
-          SCALE:               1.03,          // Subtle hover
-          TRANSITION_DURATION: '0.3s',
+          SCALE:               1.05,          // Subtle hover
+          TRANSITION_DURATION: '0.2s',
           CURSOR:              'pointer'
         },
 
         EXPAND: {
           ENABLED:             true,
-          SCALE:               1.4,            // Smaller expand
-          TRANSITION_DURATION: '0.5s'
+          SCALE:               1.8,            // Smaller expand
+          TRANSITION_DURATION: '0.4s'
         }
       }
     },
