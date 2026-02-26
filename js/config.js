@@ -259,7 +259,7 @@ export const CONFIG = {
     LEFT_PANEL: {
       WIDTH:            '40%',          // Slightly narrower
       BACKGROUND_COLOR: '#ffffff',
-      PADDING: '100px',
+      PADDING: '35px',
 
       TITLE: {
         ENABLED: true,
@@ -321,12 +321,12 @@ export const CONFIG = {
     RIGHT_PANEL: {
       WIDTH:                '60%',
       BACKGROUND_COLOR:     '#ffffff',
-      PADDING: '100px',
+      PADDING: '35px',
       SCROLL_PADDING_TOP:   '0px',
       SCROLL_PADDING_BOTTOM:'100px',
 
       MEDIA: {
-        HEIGHT: 'clamp(120px, 2vh, 220px)',  // MUCH smaller images
+        HEIGHT: 'clamp(120px, 20vh, 220px)',  // MUCH smaller images
         SPACING: 15,
 
         HOVER: {
