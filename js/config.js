@@ -140,7 +140,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       3.9,
+    SIZE:       4,
     CLICK_SCALE: 0.85,
   },
 
@@ -179,7 +179,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 3vw, 48px)',  // Adaptive font
+      FONT_SIZE:      'clamp(30px, 4vw, 50px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -194,10 +194,10 @@ export const CONFIG = {
       ENABLED:      true,
       PATH:         './img/profile.png',
       WIDTH:        'auto',
-      HEIGHT:       '40vh',
+      HEIGHT:       '20vh',
       MARGIN_TOP:   '60px',
       MARGIN_LEFT:  '35px',
-      POP_DELAY:    3000,
+      POP_DELAY:    5500,
     },
     
     CV_IMAGE: {
@@ -208,7 +208,7 @@ export const CONFIG = {
       HEIGHT:       '100vh',
       MARGIN_TOP:   '0px',
       MARGIN_RIGHT: '40px',
-      POP_DELAY:    3500,
+      POP_DELAY:    5800,
     }
   },
 
@@ -217,7 +217,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   CONTACT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 3vw, 48px)',  // Adaptive font
+      FONT_SIZE:      'clamp(30px, 4vw, 50px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -251,7 +251,7 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(30px, 3vw, 48px)',  // Adaptive
+            FONT_SIZE:      'clamp(30px, 4vw, 50px)',  // Adaptive
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -261,7 +261,7 @@ export const CONFIG = {
           },
           {
             FONT_FAMILY:    'TitleFont2',
-            FONT_SIZE:      'clamp(30px, 3vw, 48px)',  // Adaptive
+            FONT_SIZE:      'clamp(30px, 4vw, 50px)',  // Adaptive
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -275,19 +275,19 @@ export const CONFIG = {
       SUBTITLE: {
         ENABLED:       true,
         FONT_FAMILY:   'SubtitleFont',
-        FONT_SIZE:     'clamp(16px, 1.5vw, 22px)',  // Adaptive
+        FONT_SIZE:     'clamp(16px, 1vw, 18px)',  // Adaptive
         FONT_WEIGHT:   'normal',
         FONT_STYLE:    'italic',
         COLOR:         '#000000',
         LINE_HEIGHT:   '0.85',
         LETTER_SPACING:'0.5px',
-        MARGIN_BOTTOM: '30px'
+        MARGIN_BOTTOM: '0px'
       },
 
       METADATA: {
         ENABLED:       true,
         FONT_FAMILY:   'TextFont',
-        FONT_SIZE:     'clamp(10px, 0.9vw, 13px)',  // Adaptive
+        FONT_SIZE:     'clamp(10px, 0.9vw, 12px)',  // Adaptive
         FONT_WEIGHT:   'normal',
         COLOR:         '#999999',
         LINE_HEIGHT:   '0.85',
