@@ -259,10 +259,7 @@ export const CONFIG = {
     LEFT_PANEL: {
       WIDTH:            '40%',          // Slightly narrower
       BACKGROUND_COLOR: '#ffffff',
-      PADDING_TOP:      '40px',
-      PADDING_LEFT:     '40px',
-      PADDING_RIGHT:    '30px',
-      PADDING_BOTTOM:   '40px',
+      PADDING: '100px',
 
       TITLE: {
         ENABLED: true,
@@ -270,7 +267,7 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(25px, 3.5vw, 48px)',  // Much smaller
+            FONT_SIZE:      'clamp(25px, 6vw, 48px)',  // Much smaller
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -324,10 +321,7 @@ export const CONFIG = {
     RIGHT_PANEL: {
       WIDTH:                '60%',
       BACKGROUND_COLOR:     '#ffffff',
-      PADDING_TOP:          '40px',
-      PADDING_RIGHT:        '40px',
-      PADDING_LEFT:         '30px',
-      PADDING_BOTTOM:       '100px',
+      PADDING: '100px',
       SCROLL_PADDING_TOP:   '0px',
       SCROLL_PADDING_BOTTOM:'100px',
 
