@@ -139,7 +139,7 @@ export const CONFIG = {
     POSITION_X: -13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       6,
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
   },
 
@@ -148,7 +148,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       6,
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
   },
 
@@ -157,7 +157,7 @@ export const CONFIG = {
     POSITION_X: 12.25,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       6,
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -168,7 +168,7 @@ export const CONFIG = {
     POSITION_X: 13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       6,
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -179,32 +179,68 @@ export const CONFIG = {
     POSITION_X: 13,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       6,
+    SIZE:       0.8,
   },
 
-  // --- ABOUT & CONTACT SCENE IMAGES ---
-  ABOUT_IMAGE: {
-    PATH: './img/profile.png',
-    POSITION_X: '16vw',
-    POSITION_Y: '76vh',
-    TRANSFORM: 'translate(-50%, -50%)',
-    WIDTH: '28vw',                 // Scales with viewport
-    HEIGHT: 'auto',
-    MARGIN_TOP: '40px',
-    POP_DELAY: 5500,
+  // ═══════════════════════════════════════════════════════════
+  // ABOUT SCENE LAYOUT
+  // Text on left with margin, image on right with margin
+  // ═══════════════════════════════════════════════════════════
+  ABOUT_SCENE: {
+    // Text positioned on left side
+    TEXT: {
+      FONT_SIZE:      'clamp(40px, 5.5vw, 85px)',  // Responsive font
+      FONT_FAMILY:    'TitleFont',
+      FONT_WEIGHT:    'bold',
+      COLOR:          '#000000',
+      TEXT_ALIGN:     'left',
+      LETTER_SPACING: '-5px',
+      LINE_HEIGHT:    '0.85',
+      MARGIN_TOP:     '60px',     // Top margin
+      MARGIN_LEFT:    '60px',     // Left margin
+      MARGIN_RIGHT:   '40px',
+    },
+    
+    // Profile image on right side
+    PROFILE_IMAGE: {
+      PATH:        './img/profile.png',
+      WIDTH:       '400px',      // Fixed width (keeps dimensions)
+      HEIGHT:      'auto',
+      MARGIN_TOP:  '60px',       // Top margin
+      MARGIN_RIGHT:'60px',       // Right margin
+      POP_DELAY:   5500,
+    },
+    
+    // CV image on right side
+    CV: {
+      ENABLED:      true,
+      PATH_EN:      './img/cvenglish.jpg',
+      PATH_FR:      './img/cvfrancais.jpg',
+      WIDTH:        'auto',
+      HEIGHT:       'calc(100vh - 120px)',  // Full height minus margins
+      MARGIN_TOP:   '60px',
+      MARGIN_RIGHT: '60px',
+      POP_DELAY:    5800,
+    }
   },
 
-  // --- ABOUT PAGE CV (JPG IMAGE) ---
-  ABOUT_CV: {
-    ENABLED: true,
-    PATH_EN: './img/cvenglish.jpg',
-    PATH_FR: './img/cvfrancais.jpg',
-    POSITION_X: '68.5vw',
-    POSITION_Y: '50vh',
-    WIDTH: 'auto',
-    HEIGHT: '100vh',
-    TRANSFORM: 'translate(-50%, -50%)',
-    POP_DELAY: 5800,
+  // ═══════════════════════════════════════════════════════════
+  // CONTACT SCENE LAYOUT
+  // Text on left with margin, no image
+  // ═══════════════════════════════════════════════════════════
+  CONTACT_SCENE: {
+    TEXT: {
+      FONT_SIZE:      'clamp(40px, 5.5vw, 85px)',  // Responsive font
+      FONT_FAMILY:    'TitleFont',
+      FONT_WEIGHT:    'bold',
+      COLOR:          '#000000',
+      TEXT_ALIGN:     'left',
+      LETTER_SPACING: '-5px',
+      LINE_HEIGHT:    '0.85',
+      MARGIN_TOP:     '60px',     // Top margin
+      MARGIN_LEFT:    '60px',     // Left margin
+      MARGIN_RIGHT:   '40px',
+    }
   },
 
   // --- CONTACT PAGE LINKS ---
@@ -213,34 +249,38 @@ export const CONFIG = {
     INSTAGRAM_URL: 'https://www.instagram.com/neptunhuh/',
   },
 
-  // --- IMAGE CANVAS SCENE CONFIGURATION ---
+  // ═══════════════════════════════════════════════════════════
+  // IMAGE CANVAS SCENE - TWO COLUMN FIXED LAYOUT
+  // Left: Text | Right: Images
+  // ═══════════════════════════════════════════════════════════
   IMAGE_CANVAS: {
 
-    // ═══════════════════════════════════════════════════════════
-    // LEFT PANEL
-    // ═══════════════════════════════════════════════════════════
+    // Left column: Text content
     LEFT_PANEL: {
-      WIDTH:            '38vw',
+      WIDTH:            '38%',           // Fixed width percentage
       BACKGROUND_COLOR: '#ffffff',
-      PADDING:          '4.2vw',   // Scales: 60px @ 1440px = 4.2vw
+      PADDING_TOP:      '60px',          // Top margin
+      PADDING_LEFT:     '60px',          // Left margin
+      PADDING_RIGHT:    '40px',
+      PADDING_BOTTOM:   '60px',
 
       TITLE: {
         ENABLED: true,
-        MARGIN_BOTTOM: '2.2vw',    // Scales: 32px @ 1440px = 2.2vw
+        MARGIN_BOTTOM: '32px',
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      '5.9vw',      // Scales: 85px @ 1440px = 5.9vw
+            FONT_SIZE:      'clamp(40px, 4.5vw, 85px)',  // Scales from 40px to 85px
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
-            LETTER_SPACING: '-0.35vw',    // Scales: -5px @ 1440px = -0.35vw
-            LINE_HEIGHT:   '0.85',
+            LETTER_SPACING: '-5px',
+            LINE_HEIGHT:    '0.85',
             DISPLAY_BLOCK:  true
           },
           {
             FONT_FAMILY:    'TitleFont2',
-            FONT_SIZE:      '5.9vw',      // Scales: 85px @ 1440px = 5.9vw
+            FONT_SIZE:      'clamp(40px, 4.5vw, 85px)',
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -254,24 +294,24 @@ export const CONFIG = {
       SUBTITLE: {
         ENABLED:       true,
         FONT_FAMILY:   'SubtitleFont',
-        FONT_SIZE:     '1.67vw',       // Scales: 24px @ 1440px = 1.67vw
+        FONT_SIZE:     'clamp(16px, 1.5vw, 24px)',  // Scales from 16px to 24px
         FONT_WEIGHT:   'normal',
         FONT_STYLE:    'italic',
         COLOR:         '#000000',
-        LINE_HEIGHT:   '0.85',
-        LETTER_SPACING:'0.035vw',      // Scales: 0.5px @ 1440px = 0.035vw
-        MARGIN_BOTTOM: '2.1vw'         // Scales: 30px @ 1440px = 2.1vw
+        LINE_HEIGHT:   '1.2',
+        LETTER_SPACING:'0.5px',
+        MARGIN_BOTTOM: '30px'
       },
 
       METADATA: {
         ENABLED:       true,
         FONT_FAMILY:   'TextFont',
-        FONT_SIZE:     '0.9vw',        // Scales: 13px @ 1440px = 0.9vw
+        FONT_SIZE:     'clamp(11px, 0.9vw, 13px)',  // Scales from 11px to 13px
         FONT_WEIGHT:   'normal',
         COLOR:         '#999999',
-        LINE_HEIGHT:   '0.85',
-        LETTER_SPACING:'0.02vw',       // Scales: 0.3px @ 1440px = 0.02vw
-        MARGIN_BOTTOM: '0.42vw',       // Scales: 6px @ 1440px = 0.42vw
+        LINE_HEIGHT:   '1.4',
+        LETTER_SPACING:'0.3px',
+        MARGIN_BOTTOM: '6px',
         ITEMS: {
           DATE:          { LABEL: 'Date',          ENABLED: true },
           CLIENT:        { LABEL: 'Client',        ENABLED: true },
@@ -281,38 +321,36 @@ export const CONFIG = {
       },
     },
 
-    // ═══════════════════════════════════════════════════════════
-    // RIGHT PANEL
-    // ═══════════════════════════════════════════════════════════
+    // Right column: Images
     RIGHT_PANEL: {
-      WIDTH:                '60vw',
+      WIDTH:                '62%',         // Fixed width percentage
       BACKGROUND_COLOR:     '#ffffff',
-      PADDING:              '4.2vw',  // Scales: 60px @ 1440px = 4.2vw
+      PADDING_TOP:          '60px',        // Top margin
+      PADDING_RIGHT:        '60px',        // Right margin
+      PADDING_LEFT:         '40px',
+      PADDING_BOTTOM:       '120px',
       SCROLL_PADDING_TOP:   '0px',
       SCROLL_PADDING_BOTTOM:'120px',
 
       MEDIA: {
-        HEIGHT: 200,
+        HEIGHT: 'clamp(180px, 28vh, 400px)',  // Responsive image height
         SPACING: 20,
 
         HOVER: {
           ENABLED:             true,
-          SCALE:               1.2,
+          SCALE:               1.05,          // Subtle hover scale
           TRANSITION_DURATION: '0.4s',
           CURSOR:              'pointer'
         },
 
         EXPAND: {
           ENABLED:             true,
-          SCALE:               2.4,
+          SCALE:               1.6,            // Reduced to prevent overflow
           TRANSITION_DURATION: '0.6s'
         }
       }
     },
 
-    // ═══════════════════════════════════════════════════════════
-    // CLOSE BUTTON
-    // ═══════════════════════════════════════════════════════════
     CLOSE_BUTTON: {
       IMAGE_PATH:    './img/close.png',
       WIDTH_IDLE:    '28px',
@@ -329,21 +367,18 @@ export const CONFIG = {
       Z_INDEX:       10001
     },
 
-    // ═══════════════════════════════════════════════════════════
-    // IMAGE TEXT
-    // ═══════════════════════════════════════════════════════════
     IMAGE_TEXT: {
       ENABLED:        true,
       FONT_FAMILY:    'TextFont',
-      FONT_SIZE:      '1.25vw',      // Scales: 18px @ 1440px = 1.25vw
+      FONT_SIZE:      'clamp(14px, 1.2vw, 18px)',  // Responsive
       FONT_WEIGHT:    'normal',
       FONT_STYLE:     'normal',
       COLOR:          '#444444',
-      LINE_HEIGHT:    '1',
-      LETTER_SPACING: '0.014vw',     // Scales: 0.2px @ 1440px = 0.014vw
-      TEXT_ALIGN: 'right',
-      PADDING_RIGHT: '0.83vw',       // Scales: 12px @ 1440px = 0.83vw
-      MARGIN_TOP:     '0.97vw',      // Scales: 14px @ 1440px = 0.97vw
+      LINE_HEIGHT:    '1.3',
+      LETTER_SPACING: '0.2px',
+      TEXT_ALIGN:     'right',
+      PADDING_RIGHT:  '12px',
+      MARGIN_TOP:     '14px',
       TYPEWRITER: {
         SPEED:       22,
         CURSOR:      true,
@@ -351,9 +386,6 @@ export const CONFIG = {
       }
     },
 
-    // ═══════════════════════════════════════════════════════════
-    // VIDEO
-    // ═══════════════════════════════════════════════════════════
     VIDEO: {
       AUTOPLAY:  true,
       HOVER_PLAY:false,
