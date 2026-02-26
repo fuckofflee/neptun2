@@ -131,7 +131,7 @@ export const CONFIG = {
     POSITION_X: -13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,  // ← SAME SIZE FOR ALL BUTTONS
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
   },
 
@@ -140,7 +140,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,  // ← SAME SIZE
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
   },
 
@@ -149,7 +149,7 @@ export const CONFIG = {
     POSITION_X: 12.25,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,  // ← SAME SIZE
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -160,7 +160,7 @@ export const CONFIG = {
     POSITION_X: 13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,  // ← SAME SIZE
+    SIZE:       0.8,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -171,15 +171,15 @@ export const CONFIG = {
     POSITION_X: 13,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,  // ← SAME SIZE
+    SIZE:       0.8,
   },
 
   // ═══════════════════════════════════════════════════════════
-  // ABOUT SCENE - Simplified: Text + Profile Image + CV Image
+  // ABOUT SCENE - Text + Profile Image + CV Image
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 4vw, 75px)',
+      FONT_SIZE:      'clamp(30px, 4vw, 65px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -190,24 +190,22 @@ export const CONFIG = {
       MARGIN_LEFT:    '35px',
     },
     
-    // Single profile image
     IMAGE: {
       ENABLED:      true,
       PATH:         './img/profile.png',
       WIDTH:        'auto',
-      HEIGHT:       '40vh',         // ← Adjustable in VH
+      HEIGHT:       '40vh',
       MARGIN_TOP:   '60px',
       MARGIN_LEFT:  '35px',
       POP_DELAY:    3000,
     },
     
-    // CV as image (100vh height, auto width)
     CV_IMAGE: {
       ENABLED:      true,
       PATH_EN:      './img/cvenglish.jpg',
       PATH_FR:      './img/cvfrancais.jpg',
       WIDTH:        'auto',
-      HEIGHT:       '100vh',        // ← Full viewport height
+      HEIGHT:       '100vh',
       MARGIN_TOP:   '0px',
       MARGIN_RIGHT: '40px',
       POP_DELAY:    3500,
@@ -219,7 +217,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   CONTACT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 3.5vw, 75px)',
+      FONT_SIZE:      'clamp(30px, 4vw, 65px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -253,7 +251,7 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      '85px',
+            FONT_SIZE:      'clamp(40px, 5vw, 65px)',  // Adaptive
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -263,7 +261,7 @@ export const CONFIG = {
           },
           {
             FONT_FAMILY:    'TitleFont2',
-            FONT_SIZE:      '85px',
+            FONT_SIZE:      'clamp(40px, 5vw, 65px)',  // Adaptive
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -277,7 +275,7 @@ export const CONFIG = {
       SUBTITLE: {
         ENABLED:       true,
         FONT_FAMILY:   'SubtitleFont',
-        FONT_SIZE:     '24px',
+        FONT_SIZE:     'clamp(16px, 1.5vw, 24px)',  // Adaptive
         FONT_WEIGHT:   'normal',
         FONT_STYLE:    'italic',
         COLOR:         '#000000',
@@ -289,7 +287,7 @@ export const CONFIG = {
       METADATA: {
         ENABLED:       true,
         FONT_FAMILY:   'TextFont',
-        FONT_SIZE:     '13px',
+        FONT_SIZE:     'clamp(10px, 0.9vw, 13px)',  // Adaptive
         FONT_WEIGHT:   'normal',
         COLOR:         '#999999',
         LINE_HEIGHT:   '0.85',
@@ -349,7 +347,7 @@ export const CONFIG = {
     IMAGE_TEXT: {
       ENABLED:        true,
       FONT_FAMILY:    'TextFont',
-      FONT_SIZE:      '18px',
+      FONT_SIZE:      'clamp(14px, 1.2vw, 18px)',  // Adaptive
       FONT_WEIGHT:    'normal',
       FONT_STYLE:     'normal',
       COLOR:          '#444444',
