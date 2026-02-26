@@ -131,7 +131,7 @@ export const CONFIG = {
     POSITION_X: -13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       4,
     CLICK_SCALE: 0.85,
   },
 
@@ -140,7 +140,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       3.8,
     CLICK_SCALE: 0.85,
   },
 
@@ -149,7 +149,7 @@ export const CONFIG = {
     POSITION_X: 12.25,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       2.6,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -160,7 +160,7 @@ export const CONFIG = {
     POSITION_X: 13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       3,
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -171,7 +171,7 @@ export const CONFIG = {
     POSITION_X: 13,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       0.8,
+    SIZE:       2.8,
   },
 
   // ═══════════════════════════════════════════════════════════
@@ -179,7 +179,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 4vw, 65px)',  // Adaptive font
+      FONT_SIZE:      'clamp(30px, 4vw, 60px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -217,7 +217,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   CONTACT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 4vw, 65px)',  // Adaptive font
+      FONT_SIZE:      'clamp(30px, 4vw, 60px)',  // Adaptive font
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -251,7 +251,7 @@ export const CONFIG = {
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(40px, 5vw, 65px)',  // Adaptive
+            FONT_SIZE:      'clamp(40px, 5vw, 60px)',  // Adaptive
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -261,7 +261,7 @@ export const CONFIG = {
           },
           {
             FONT_FAMILY:    'TitleFont2',
-            FONT_SIZE:      'clamp(40px, 5vw, 65px)',  // Adaptive
+            FONT_SIZE:      'clamp(40px, 5vw, 60px)',  // Adaptive
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
