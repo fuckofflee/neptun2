@@ -8,18 +8,14 @@ export const CONFIG = {
   CAMERA_DISTANCE: 20,
   FOV: 50,
 
-  // --- OBJECTS CONFIGURATION ---
   MAIN_OBJECT_PATH: './models/mainObject.obj',
   SECOND_OBJECT_PATH: './models/secondObject.obj',
-  
   OBJECT_SCALE: 0.38, 
 
-  // Visual Parameters (Shared)
   OBJECT_COLOR: '#92ff24',    
   OBJECT_SHININESS: 0.0005,     
   OBJECT_METALNESS: 0.01,      
 
-  // Independent Rotation Speeds
   MAIN_OBJECT_ROTATION_SPEED: 0.003, 
   SECOND_OBJECT_ROTATION_SPEED: 0.006, 
 
@@ -81,14 +77,12 @@ export const CONFIG = {
       weight: 'normal',
       style: 'normal'
     },
-
     TITLE2: {
       path: './fonts/PerfectoCalligraphy.ttf', 
       family: 'TitleFont2',
       weight: 'normal',
       style: 'normal'
     },
-
     SUBTITLE: {
       path: './fonts/SFPRODISPLAYMEDIUM.OTF',
       family: 'SubtitleFont',
@@ -105,7 +99,6 @@ export const CONFIG = {
 
   IMAGES_PATH: './img/',
 
-  // --- ARROW CONFIGURATION ---
   ARROW: {
     PATH: './img/arrow.svg',
     SIZE: 1,
@@ -118,7 +111,6 @@ export const CONFIG = {
     CLICK_SCALE: 0.8
   },
 
-  // --- LIQUID GLASS CURSOR CONFIGURATION ---
   CURSOR: {
     SIZE: 20, 
     DELAY: 0, 
@@ -133,13 +125,13 @@ export const CONFIG = {
     BLUR: '6px'
   },
 
-  // --- ABOUT & CONTACT BUTTONS (Gallery Scene) ---
+  // SVG BUTTONS - All use SAME SIZE for consistency
   ABOUT_BUTTON: {
     SVG_PATH:   './img/about.svg',
     POSITION_X: -13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       5,
+    SIZE:       0.8,  // ← SAME SIZE FOR ALL BUTTONS
     CLICK_SCALE: 0.85,
   },
 
@@ -148,7 +140,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       6,
+    SIZE:       0.8,  // ← SAME SIZE
     CLICK_SCALE: 0.85,
   },
 
@@ -157,7 +149,7 @@ export const CONFIG = {
     POSITION_X: 12.25,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       3,
+    SIZE:       0.8,  // ← SAME SIZE
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -168,7 +160,7 @@ export const CONFIG = {
     POSITION_X: 13.75,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       3,
+    SIZE:       0.8,  // ← SAME SIZE
     CLICK_SCALE: 0.85,
     OPACITY_ACTIVE: 1.0,
     OPACITY_INACTIVE: 0.5,
@@ -179,15 +171,15 @@ export const CONFIG = {
     POSITION_X: 13,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       3,
+    SIZE:       0.8,  // ← SAME SIZE
   },
 
   // ═══════════════════════════════════════════════════════════
-  // ABOUT SCENE - Based on your reference image
+  // ABOUT SCENE - Simplified: Text + Profile Image + CV Image
   // ═══════════════════════════════════════════════════════════
   ABOUT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 4vw, 75px)',  // Much smaller max
+      FONT_SIZE:      'clamp(30px, 4vw, 75px)',
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -198,31 +190,27 @@ export const CONFIG = {
       MARGIN_LEFT:    '35px',
     },
     
-    // Grid of 6 profile photos (3x2)
-    PROFILE_GRID: {
+    // Single profile image
+    IMAGE: {
       ENABLED:      true,
       PATH:         './img/profile.png',
-      COLUMNS:      3,              // 3 photos wide
-      ROWS:         2,              // 2 photos tall
-      PHOTO_SIZE:   '120px',        // Each photo size
-      GAP:          '20px',         // Gap between photos
-      MARGIN_TOP:   '480px',        // Below text
-      MARGIN_LEFT:  '40px',
-      POP_DELAY:    5500,
+      WIDTH:        'auto',
+      HEIGHT:       '40vh',         // ← Adjustable in VH
+      MARGIN_TOP:   '60px',
+      MARGIN_LEFT:  '35px',
+      POP_DELAY:    3000,
     },
     
-    // CV sections on the right
-    CV: {
+    // CV as image (100vh height, auto width)
+    CV_IMAGE: {
       ENABLED:      true,
       PATH_EN:      './img/cvenglish.jpg',
       PATH_FR:      './img/cvfrancais.jpg',
-      FONT_SIZE:    'clamp(10px, 0.85vw, 14px)',
-      FONT_FAMILY:  'TextFont',
-      COLOR:        '#000000',
-      LINE_HEIGHT:  '1.4',
-      MARGIN_TOP:   '40px',
+      WIDTH:        'auto',
+      HEIGHT:       '100vh',        // ← Full viewport height
+      MARGIN_TOP:   '0px',
       MARGIN_RIGHT: '40px',
-      POP_DELAY:    5800,
+      POP_DELAY:    3500,
     }
   },
 
@@ -231,7 +219,7 @@ export const CONFIG = {
   // ═══════════════════════════════════════════════════════════
   CONTACT_SCENE: {
     TEXT: {
-      FONT_SIZE:      'clamp(30px, 3.5vw, 75px)',  // Smaller max
+      FONT_SIZE:      'clamp(30px, 3.5vw, 75px)',
       FONT_FAMILY:    'TitleFont',
       FONT_WEIGHT:    'bold',
       COLOR:          '#000000',
@@ -244,7 +232,6 @@ export const CONFIG = {
     }
   },
 
-  // --- CONTACT PAGE LINKS ---
   CONTACT_LINKS: {
     EMAIL: 'leonmartinbergot@hotmail.com',
     INSTAGRAM_URL: 'https://www.instagram.com/neptunhuh/',
@@ -256,27 +243,27 @@ export const CONFIG = {
   IMAGE_CANVAS: {
 
     LEFT_PANEL: {
-      WIDTH:            '40%',          // Slightly narrower
+      WIDTH:            '38%',
       BACKGROUND_COLOR: '#ffffff',
-      PADDING: '35px',
+      PADDING:          '60px',
 
       TITLE: {
         ENABLED: true,
-        MARGIN_BOTTOM: '20px',
+        MARGIN_BOTTOM: '32px',
         PARTS: [
           {
             FONT_FAMILY:    'TitleFont',
-            FONT_SIZE:      'clamp(25px, 7vw, 75px)',  // Much smaller
+            FONT_SIZE:      '85px',
             FONT_WEIGHT:    'bold',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
-            LETTER_SPACING: '-3px',
-            LINE_HEIGHT:    '0.8',
+            LETTER_SPACING: '-5px',
+            LINE_HEIGHT:   '0.85',
             DISPLAY_BLOCK:  true
           },
           {
             FONT_FAMILY:    'TitleFont2',
-            FONT_SIZE:      'clamp(25px, 2.8vw, 75px)',  // Much smaller
+            FONT_SIZE:      '85px',
             FONT_WEIGHT:    'normal',
             FONT_STYLE:     'normal',
             COLOR:          '#000000',
@@ -290,24 +277,24 @@ export const CONFIG = {
       SUBTITLE: {
         ENABLED:       true,
         FONT_FAMILY:   'SubtitleFont',
-        FONT_SIZE:     'clamp(11px, 1.2vw, 16px)',  // Smaller
+        FONT_SIZE:     '24px',
         FONT_WEIGHT:   'normal',
         FONT_STYLE:    'italic',
         COLOR:         '#000000',
-        LINE_HEIGHT:   '0.8',
-        LETTER_SPACING:'0.3px',
-        MARGIN_BOTTOM: '20px'
+        LINE_HEIGHT:   '0.85',
+        LETTER_SPACING:'0.5px',
+        MARGIN_BOTTOM: '30px'
       },
 
       METADATA: {
         ENABLED:       true,
         FONT_FAMILY:   'TextFont',
-        FONT_SIZE:     'clamp(9px, 0.75vw, 11px)',  // Smaller
+        FONT_SIZE:     '13px',
         FONT_WEIGHT:   'normal',
         COLOR:         '#999999',
-        LINE_HEIGHT:   '1.5',
-        LETTER_SPACING:'0.2px',
-        MARGIN_BOTTOM: '4px',
+        LINE_HEIGHT:   '0.85',
+        LETTER_SPACING:'0.3px',
+        MARGIN_BOTTOM: '6px',
         ITEMS: {
           DATE:          { LABEL: 'Date',          ENABLED: true },
           CLIENT:        { LABEL: 'Client',        ENABLED: true },
@@ -320,25 +307,25 @@ export const CONFIG = {
     RIGHT_PANEL: {
       WIDTH:                '60%',
       BACKGROUND_COLOR:     '#ffffff',
-      PADDING: '35px',
+      PADDING:              '60px',
       SCROLL_PADDING_TOP:   '0px',
-      SCROLL_PADDING_BOTTOM:'100px',
+      SCROLL_PADDING_BOTTOM:'120px',
 
       MEDIA: {
-        HEIGHT: 200,  // MUCH smaller images
-        SPACING: 15,
+        HEIGHT: 200,
+        SPACING: 20,
 
         HOVER: {
           ENABLED:             true,
-          SCALE:               1.05,          // Subtle hover
-          TRANSITION_DURATION: '0.2s',
+          SCALE:               1.2,
+          TRANSITION_DURATION: '0.4s',
           CURSOR:              'pointer'
         },
 
         EXPAND: {
           ENABLED:             true,
-          SCALE:               1.8,            // Smaller expand
-          TRANSITION_DURATION: '0.4s'
+          SCALE:               2.4,
+          TRANSITION_DURATION: '0.6s'
         }
       }
     },
@@ -362,15 +349,18 @@ export const CONFIG = {
     IMAGE_TEXT: {
       ENABLED:        true,
       FONT_FAMILY:    'TextFont',
-      FONT_SIZE:      'clamp(10px, 0.9vw, 13px)',  // Smaller
+      FONT_SIZE:      '18px',
       FONT_WEIGHT:    'normal',
       FONT_STYLE:     'normal',
       COLOR:          '#444444',
       LINE_HEIGHT:    '1',
-      LETTER_SPACING: '0.1px',
+      LETTER_SPACING: '0.2px',
       TEXT_ALIGN:     'right',
-      PADDING_RIGHT:  '8px',
-      MARGIN_TOP:     '8px',
+      PADDING_TOP:    '0px',
+      PADDING_BOTTOM: '0px',
+      PADDING_LEFT:   '0px',
+      PADDING_RIGHT:  '12px',
+      MARGIN_TOP:     '14px',
       TYPEWRITER: {
         SPEED:       22,
         CURSOR:      true,
@@ -387,29 +377,21 @@ export const CONFIG = {
     }
   },
 
-  // --- GALLERY INACTIVITY TIMEOUT ---
   GALLERY_INACTIVITY_TIMEOUT: 20000,
-
-  // --- GALLERY ZOOM ANIMATION ---
   GALLERY_FADE_SPEED: 0.05,
-
-  // --- VIDEO CONFIGURATION ---
   VIDEO_AUTOPLAY: false,
   VIDEO_HOVER_PLAY: true,
 
-  // --- CUBE ROTATION TO IMAGE ANIMATION ---
   CUBE_ALIGN_ROTATION_SPEED:  0.07,
   CUBE_ALIGN_FADE_SPEED:      0.04,
   CUBE_ALIGN_PAUSE_MS:        150,
   CUBE_ALIGN_SELECTED_DELAY:  350,
 
-  // --- CANVAS SCENE ENTRANCE ANIMATION ---
   CANVAS_TEXT_TYPEWRITER_SPEED: 10,
   CANVAS_MEDIA_POP_SPEED:       0.12,
   CANVAS_MEDIA_POP_DELAY_MIN:   100,
   CANVAS_MEDIA_POP_DELAY_MAX:   800,
 
-  // --- CANVAS SCENE EXIT ANIMATION ---
   CANVAS_EXIT_FADE_DELAY_MIN:   50,
   CANVAS_EXIT_FADE_DELAY_MAX:   500,
   CANVAS_EXIT_FADE_SPEED:       0.008,
