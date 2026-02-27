@@ -193,7 +193,7 @@ export const CONFIG = {
     IMAGE: {
       ENABLED:      true,
       PATH:         './img/profile.png',
-      WIDTH:        '20vw',
+      WIDTH:        '40vh',
       HEIGHT:       '30vh',
       MARGIN_TOP:   '60px',
       MARGIN_LEFT:  '35px',
