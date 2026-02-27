@@ -140,7 +140,7 @@ export const CONFIG = {
     POSITION_X: -11.5,
     POSITION_Y: 8.6,
     POSITION_Z: 0,
-    SIZE:       4,
+    SIZE:       4.15,
     CLICK_SCALE: 0.85,
   },
 
@@ -193,7 +193,7 @@ export const CONFIG = {
     IMAGE: {
       ENABLED:      true,
       PATH:         './img/profile.png',
-      WIDTH:        'auto',
+      WIDTH:        '20vw',
       HEIGHT:       '20vh',
       MARGIN_TOP:   '60px',
       MARGIN_LEFT:  '35px',
