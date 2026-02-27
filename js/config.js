@@ -194,7 +194,7 @@ export const CONFIG = {
       ENABLED:      true,
       PATH:         './img/profile.png',
       WIDTH:        '20vw',
-      HEIGHT:       '20vh',
+      HEIGHT:       '30vh',
       MARGIN_TOP:   '60px',
       MARGIN_LEFT:  '35px',
       POP_DELAY:    5500,
